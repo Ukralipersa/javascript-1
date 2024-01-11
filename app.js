@@ -1,7 +1,15 @@
-let a = 1;
+//Базовые арифметические операторы
 
-console.log(a);
+const width = 10;
+const height = 5;
+const space = width * height;
+const newWidth = width - 4;
+const newWidth2 = width + 4;
+const division = newWidth / newWidth2;
+const volume = 2 ** 3; // 2 * 2 * 2
+console.log('division:', division);
 
-a = 'test';
-
-console.log(a);
+//Строки
+const city = 'Moscow';
+const street = 'Новослободская';
+console.log(city + ', ' + street + ' ' + 5);
