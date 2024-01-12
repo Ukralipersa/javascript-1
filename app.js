@@ -1,28 +1,17 @@
-/*
-Ваша часовая ставка 80$ и вы готовы работать не
-более 5 часов в день 5 дней в неделю (кроме выходных).
-К вам приходит заказчик и предлагает заказ на 40
-часов работы.
-Сейчас понедельник.
-Вы должны уехать через 11 дней.
-Выведете в консоль:
-- Boolean переменную успеете ли вы взяться за работу
-- Сколько вы за неё попросите?
-*/
+const projectName = 'Сайт магазина';
+const price = 2000;
+const author = 'Василий Пупкин';
 
-//Данные
-const pricePerHour = 80; //dollars
-const hoursPerDay = 5; // hours
-const Orderhours = 40; // hours
-const iHaveDays = 11; //days
-const iHaveWeekend = 2; //days
+const template = author + ' заказал ' + projectName + ' по цене ' + price + '$';
+console.log('template:', template);
 
-//Расчет
-const iHaveWorkDay = iHaveDays - iHaveWeekend;
-const iHaveHours = iHaveWorkDay * hoursPerDay;
-const isAccepted = iHaveHours > Orderhours;
-const resultPriceOrder = Orderhours * pricePerHour;
+const template2 = `${author} заказал ${projectName} по цене ${price}$`;
 
-//Результат
-console.log('isAccepted:', isAccepted);
-console.log('resultPriceOrder:', resultPriceOrder);
+console.log('template2:', template2);
+
+const template3 = 'Проект \n' + 'Цена: ' + price + '$';
+console.log('template3:', template3);
+
+const template4 = `Проект
+Цена: ${price}$`;
+console.log('template4:', template4);
