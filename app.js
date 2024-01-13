@@ -17,16 +17,15 @@ function addTaskToEnd(task) {
 function deleteTask(task) {
 	const itemIndex = tasks.indexOf(task);
 	if (itemIndex >= 0) {
-		tasks.splice(itemIndex, 1);
-	} else return 'Такой задачи в списке нет';
+		return tasks.splice(itemIndex, 1);
+	} else return false;
 }
 
 function transferTaskToStart(task) {
-	const itemIndex = tasks.indexOf(task);
-	if (itemIndex >= 0) {
-		tasks.splice(itemIndex, 1);
-		tasks.unshift(task);
-	} else return 'Такой задачи в списке нет';
+	const res = deleteTask(task);
+	if (res) {
+		tasks.unshift(res[0]);
+	} else return false;
 }
 
 addTaskToEnd('Задача 2');
