@@ -1,33 +1,24 @@
-/*
-Пользователь:
-- Возраст
-- Наличие работы
-- Деньги
-Нужно првоерить может ли он купить новый MacBook за 2000$?
-Он может брать не только свои деньги, но и взять кредит.
-Ему дадут 500$, только если ему больше 24-х лет и он
-имеет работу, 100$ если ему просто больше 24-х лет и 0 в
-ином случае.
-Напишите функцию, которая принимает данные пользователя
-и товара и возвращает true или false;
-*/
+const role1 = 'admin';
+const role2 = 'user';
+const role3 = 'superuser';
 
-const userAge = 25;
-const hasJob = false;
-const userMoney = 1900;
-const priceMac = 2000;
+const roles = ['admin', 'user', 'superuser'];
+const userInfo = ['Аня', 25];
+console.log(roles);
+console.log(roles[0]);
+console.log(roles.length);
+console.log(roles[roles.length - 1]);
 
-function calcCredit(userAge, hasJob = false) {
-	if (userAge > 24 && hasJob === true) {
-		return 500;
-	} else if (userAge > 24) {
-		return 100;
-	} else return 0;
+console.log(roles.at(0));
+console.log(roles.at(-1)); //-1 вместо roles.length - 1
+
+const usersAge = [2040 - 2022, 10 > 0 ? 5 : 0];
+console.log(usersAge);
+
+const userNames = new Array('Вася', 'Петя', 'Катя');
+console.log(userNames);
+
+function square(el) {
+	return el * el;
 }
-
-function canBuyMac(userAge, hasJob, userMoney, priceMac) {
-	const credit = calcCredit(userAge, hasJob);
-	return credit + userMoney >= priceMac;
-}
-
-console.log(canBuyMac(userAge, hasJob, userMoney, priceMac));
+console.log(square([1, 2, 3])); //NaN
