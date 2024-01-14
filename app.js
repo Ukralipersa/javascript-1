@@ -1,37 +1,13 @@
-/*
-Дан список задач
-const tasks = ['Задача 1'];
-Сделать функции:
-- Добавление задачи в конец
-- Удаление задачи по названию
-- Перенос задачи в начало списка по названию
-Всегда меняем исходный массив
- */
+userData = ['Антон', 18, 'Москва'];
 
-const tasks = ['Задача 1'];
-
-function addTaskToEnd(task) {
-	tasks.push(task);
+function getData() {
+	return ['Антон', 18, 'Москва'];
 }
 
-function deleteTask(task) {
-	const itemIndex = tasks.indexOf(task);
-	if (itemIndex >= 0) {
-		return tasks.splice(itemIndex, 1);
-	} else return false;
-}
+// const userName = getData()[0];
+// const age = getData()[1];
+// const city = getData()[2];
 
-function transferTaskToStart(task) {
-	const res = deleteTask(task);
-	if (res) {
-		tasks.unshift(res[0]);
-	} else return false;
-}
+const [userName, _, city] = userData;
 
-addTaskToEnd('Задача 2');
-addTaskToEnd('Задача 3');
-console.log(tasks);
-deleteTask('Задача 2');
-console.log(tasks);
-transferTaskToStart('Задача 3');
-console.log(tasks);
+console.log(userName, city);
