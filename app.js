@@ -1,15 +1,17 @@
-/*
-Найти среднее значение последовательности
-чисел с помощью reduce
-*/
-const arr = [1, 4, 4, 10];
+const arr = [2, 4, 4, 10, 20];
 
-const avg = arr.reduce((acc, val, i, arr) => {
-	acc += val;
-	if (i === arr.length - 1) {
-		acc = acc / arr.length;
-	}
-	return acc;
-}, 0);
+let elGT5;
 
-console.log(avg);
+// for (const el of arr) {
+// 	if (el > 5) {
+// 		elGT5 = el;
+// 		break;
+// 	}
+// }
+
+// console.log(elGT5);
+
+elGT5 = arr.find(el => el > 5);
+elGT5Index = arr.findIndex(el => el > 5);
+console.log(elGT5);
+console.log(elGT5Index);
