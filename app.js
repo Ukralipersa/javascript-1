@@ -1,17 +1,17 @@
+/*
+Написать функцию, которая возвращает true,
+если элемент есть, и false, если нет.
+*/
+
 const arr = [2, 4, 4, 10, 20];
 
-let elGT5;
+function some(array, el) {
+	let index = array.findIndex(val => val === el);
+	if (index !== -1) {
+		return true;
+	} else return false;
+}
 
-// for (const el of arr) {
-// 	if (el > 5) {
-// 		elGT5 = el;
-// 		break;
-// 	}
-// }
+console.log(some(arr, 10));
 
-// console.log(elGT5);
-
-elGT5 = arr.find(el => el > 5);
-elGT5Index = arr.findIndex(el => el > 5);
-console.log(elGT5);
-console.log(elGT5Index);
+console.log(arr.some(el => el === 2));
