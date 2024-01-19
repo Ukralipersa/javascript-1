@@ -11,7 +11,7 @@ const wallet = {
 	operations: [],
 	plusBalance: function (reason, sum) {
 		this.balance += sum;
-		this.operations.push({ reason: reason, sum: sum });
+		this.operations.push({ reason, sum });
 		return true;
 	},
 	minusBalance: function (reason, sum) {
@@ -20,7 +20,7 @@ const wallet = {
 			return false;
 		} else {
 			this.balance -= sum;
-			this.operations.push({ reason: reason, sum: -sum });
+			this.operations.push({ reason, sum: -sum });
 			return true;
 		}
 	},
