@@ -1,18 +1,14 @@
-/* 
-преобразовать пользователей до вида
-{ fullname: "Вася Пупкин", skillNum: 2 }
-*/
+const user = {
+	name: 'Вася',
+	surname: 'Пупкин',
+	age: 24,
+	getFullName: function () {
+		return this.name + ' ' + this.surname;
+	},
+};
 
-const users = [
-	{ name: 'Вася', surname: 'Пупкин', age: 30, skills: ['Разработка', 'DevOps'] },
-	{ name: 'Катя', surname: 'Белова', age: 18, skills: ['Дизайн'] },
-];
+const getFullName = function (user) {
+	return user.name + ' ' + user.surname;
+};
 
-const changedUsers = users.map(user => {
-	return {
-		fullname: `${user.name} ${user.surname}`,
-		skillNum: user.skills.length,
-	};
-});
-
-console.log(changedUsers);
+console.log(user.getFullName());
