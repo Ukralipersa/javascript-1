@@ -1,31 +1,14 @@
-/*
-Дополнить объект методами для получения имени:
-- компании
-- сео
-- сотрудника
-*/
+'use strict';
 
-const company = {
-	name: 'OOO Агро',
-	employee: [
-		{
-			name: 'Света',
-			workerName: function () {
-				console.log(this.name);
-			},
-		},
-	],
-	ceo: {
-		name: 'Вася',
-		ceoName: function () {
-			console.log(this.name);
-		},
+const b = 1;
+const a = {
+	b,
+	getB: function () {
+		return this.b;
 	},
-	nameCompany: function () {
-		console.log(this.name);
+	getBAlt() {
+		return this.b;
 	},
 };
 
-company.nameCompany();
-company.ceo.ceoName();
-company.employee.forEach(employee => employee.workerName());
+console.log(a.getBAlt());
