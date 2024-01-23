@@ -1,14 +1,5 @@
 'use strict';
 
-// document.querySelector('.button').addEventListener('click', function () {
-// 	const input = document.querySelector('.input').value;
-// 	if (!input) {
-// 		return;
-// 	}
-// 	document.querySelector('.panel').innerText = input;
-// 	document.querySelector('.input').value = '';
-// });
-
 function submitForm() {
 	const input = document.querySelector('.input').value;
 	if (!input) {
@@ -16,12 +7,11 @@ function submitForm() {
 	}
 	document.querySelector('.panel').innerText = input;
 	document.querySelector('.input').value = '';
-	// document.querySelector('.notification').classList.add('notification_active');
-	// document.querySelector('.notification').classList.remove('notification_hidden');
-	console.log(document.querySelector('.notification').getAttribute('class'));
-	document.querySelector('.notification').setAttribute('key', 1);
-	document.querySelector('.notification').setAttribute('user-id', 1);
-	console.log(Number(document.querySelector('.notification').getAttribute('user-id')));
+	document.querySelector('.notification').classList.remove('notification_hidden');
+	const textString = JSON.stringify({
+		text: input,
+	});
+	localStorage.setItem('text', textString);
 }
 
 function inputChanged(e) {
@@ -30,8 +20,3 @@ function inputChanged(e) {
 		console.log('Enter');
 	}
 }
-
-const obj = JSON.parse('{"a": 1}');
-console.log(obj);
-const str = JSON.stringify(obj);
-console.log(str);
